@@ -3,7 +3,7 @@ I am currently working on Quantum Computing and Data science. I like to collabor
 
 
 ## 🌐 Socials:
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/his0ka_hxh) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/rudraksh-sharma2023) [![Portfolio]](rudra1x.github.io)
+[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/his0ka_hxh) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/rudraksh-sharma2023) [Portfolio](https://rudra1x.github.io)
 
 
 # 💻 Tech Stack:
