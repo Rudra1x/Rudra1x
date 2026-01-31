@@ -1,5 +1,7 @@
 # 💫 About Me:
-I am currently working on Quantum Computing and Data science. I like to collaborate on Quantum Applications, Machine learning, Quantum Machine learning and Data Science<br>
+Results-driven Data Scientist and Qiskit Advocate specializing in quantum computing, machine learning, and deep
+learning solutions. Proven expertise in developing hybrid quantum-classical algorithms that outperform traditional
+methods. Passionate about leveraging advanced computational techniques to solve complex industrial challenges<br>
 
 
 ## 🌐 Socials:
