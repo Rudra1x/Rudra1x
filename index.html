@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rudraksh Sharma - Data Scientist & Qiskit Advocate</title>
-    <meta name="description" content="Rudraksh Sharma's personal portfolio. Data Scientist and Qiskit Advocate specializing in machine learning, quantum computing, and statistical analysis.">
+    <title>Rudraksh Sharma - Applied AI Engineer & Qiskit Advocate</title>
+    <meta name="description" content="Rudraksh Sharma's portfolio. Data Scientist at AIONOS building production RAG systems and LLM applications. Qiskit Advocate, published researcher, and Berlin Kipu Quantum Hackathon 2026 3rd place winner.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -193,6 +193,51 @@
         .svg-glow {
             filter: url(#glow);
         }
+
+        /* Awards Strip */
+        .awards-strip {
+            background-color: var(--bg-content);
+            border-top: 1px solid var(--border-divider);
+            border-bottom: 1px solid var(--border-divider);
+        }
+        .award-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem 1.5rem;
+        }
+        .award-divider {
+            width: 1px;
+            height: 40px;
+            background-color: var(--border-divider);
+        }
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: var(--accent-bg-fill);
+            border: 1px solid var(--accent-bg-fill-border);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Publication cards */
+        .pub-card {
+            background-color: var(--bg-content);
+            border: 1px solid var(--border-divider);
+            border-left: 3px solid var(--accent);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pub-card:hover {
+            border-left-color: var(--accent-light);
+            box-shadow: 0 4px 16px hsla(250, 100%, 70%, 0.12);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -224,7 +269,7 @@
                 <div class="hidden md:flex md:items-center md:space-x-8">
                     <a href="#about" class="text-gray-600 hover:text-accent font-medium">About</a>
                     <a href="#projects" class="text-gray-600 hover:text-accent font-medium">Projects</a>
-                    <a href="#blog" class="text-gray-600 hover:text-accent font-medium">Blog</a>
+                    <a href="#publications" class="text-gray-600 hover:text-accent font-medium">Publications</a>
                     <a href="#contact" class="text-gray-600 hover:text-accent font-medium">Contact</a>
                     <a href="Rudraksh_Sharma_CV.pdf" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent hover:bg-blue-700">
                         <!-- CV Download Icon -->
@@ -255,7 +300,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">About</a>
                 <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Projects</a>
-                <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Blog</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Publications</a>
                 <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Contact</a>
                 <a href="Rudraksh_Sharma_CV.pdf" class="block w-full text-left px-3 py-2 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-blue-700">
                     Download CV
@@ -277,11 +322,10 @@
             <div class="w-full md:w-2/3 text-center md:text-left">
                 <span class="text-accent font-semibold">Rudraksh Sharma</span>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-2 mb-6 tracking-tight">
-                    Data Scientist & Qiskit Advocate
+                    Applied AI Engineer & Qiskit Advocate
                 </h1>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
-                   Trainee Data Scientist & Qiskit Advocate specializing in Deep Learning, Quantum Computing, NLP, Machine Learning, and Statistical Analysis.
-                    Building high-accuracy ML models and novel quantum algorithms to solve complex problems.
+                    Data Scientist at AIONOS building production RAG systems, LLM applications, and hybrid quantum-classical optimization solutions. Published researcher with 7 papers and international hackathon recognition.
                 </p>
                 <!-- Action Buttons -->
                 <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -416,7 +460,7 @@
                                     <circle cx="150" cy="180" r="5" class="p3" />
                                     
                                     <circle cx="50" cy="280" r="5" class="p4" />
-                                    <circle cx="100" cy="280" r="5" class.p5" />
+                                    <circle cx="100" cy="280" r="5" class="p5" />
                                     <circle cx="150" cy="280" r="5" class="p6" />
                                 </g>
                             </svg>
@@ -426,10 +470,10 @@
                     <!-- Content -->
                     <div class="lg:col-span-2 mt-8 lg:mt-0 space-y-8">
                         <p class="text-lg text-gray-600">
-                            I'm a Data Scientist and a Qiskit Advocate, with a passion for solving complex problems at the intersection of Physics, Deep Learning, NLP, Quantum computing, Quantum Machine Learning, and Machine Learning. I thrive on building solutions that matter—from developing ML models that achieve good accuracy on industrial datasets. I am working on Quantum Computing Solutions that outperform classical methods.
+                            Data Scientist at AIONOS and Technical Lead at Beerantum, working across LLM engineering and quantum optimization. My day-to-day is building production RAG systems — embedding pipelines, hybrid retrieval (BM25, FAISS, Qdrant), and advanced rerankers including cross-encoders and BGE. KnowledgeOS, my flagship open-source project, spans the full retrieval stack from raw ingestion to benchmarked agentic retrieval.
                         </p>
                         <p class="text-lg text-gray-600">
-                            My technical toolkit is rooted in Python, Qiskit, Pennylane, Dwave-Ocean, and scikit-learn, with hands-on experience in cybersecurity analytics and environmental prediction. I hold an MSc in Physics from Netaji Subhas University of Technology and am driven by the challenge of applying my analytical skills to create a tangible impact.
+                            On the quantum side, I work on hybrid quantum-classical optimization for logistics, aviation, and supply chain problems, with published research and industry work through the QuBri Initiative. My Physics background (MSc, NSUT) shapes how I think about both domains — optimization at scale is an energy-landscape problem regardless of whether the solver is a QUBO on annealing hardware or a loss surface in PyTorch. The interesting engineering is always in the composition.
                         </p>
                         
                         <!-- Skills -->
@@ -445,23 +489,65 @@
                             </h3>
                             <div class="flex flex-wrap gap-3">
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Python</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">LLM Engineering</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">RAG</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">LangChain</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">FAISS</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">ChromaDB</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Qdrant</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Sentence Transformers</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">FastAPI</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">MLflow</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Docker</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Qiskit</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Pennylane</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Dwave-Ocean</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Deep Learning</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Machine Learning</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Quantum Computing</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Quantum Machine Learning</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Data Science</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Data Analysis</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">NLP</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Deep Learning</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Machine Learning</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">scikit-learn</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">NLP</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">SQL</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Power BI</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Statistical Analysis</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Strip -->
+        <section class="awards-strip py-10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-8">Recognition & Awards</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-0">
+                    
+                    <!-- Award 1 -->
+                    <div class="award-item">
+                        <div class="award-badge">🏆</div>
+                        <p class="font-semibold text-gray-900 text-sm">Qiskit Fall Fest 2025</p>
+                        <p class="text-xs text-accent mt-0.5 font-medium">Winner</p>
+                    </div>
+
+                    <div class="award-divider hidden md:block mx-8"></div>
+
+                    <!-- Award 2 -->
+                    <div class="award-item">
+                        <div class="award-badge">🥇</div>
+                        <p class="font-semibold text-gray-900 text-sm">QIntern 2025</p>
+                        <p class="text-xs text-accent mt-0.5 font-medium">First Team Award</p>
+                    </div>
+
+                    <div class="award-divider hidden md:block mx-8"></div>
+
+                    <!-- Award 3 -->
+                    <div class="award-item">
+                        <div class="award-badge">🥉</div>
+                        <p class="font-semibold text-gray-900 text-sm">Berlin Kipu Quantum Hackathon 2026</p>
+                        <p class="text-xs text-accent mt-0.5 font-medium">3rd Place Winner</p>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -476,13 +562,48 @@
                 
                 <!-- Projects Grid -->
                 <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Project Card 1 -->
+
+                    <!-- KnowledgeOS — HERO PROJECT -->
+                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <span class="text-sm text-accent font-medium">LLM Engineering / MLOps</span>
+                            <h3 class="mt-2 text-xl font-semibold text-gray-900">KnowledgeOS — Production RAG Platform</h3>
+                            <p class="mt-3 text-base text-gray-600">
+                                A modular, production-grade RAG platform spanning the full retrieval stack: 5+ embedding strategies, hybrid indexing (BM25, FAISS, Qdrant, RAPTOR), and advanced retrievers including multi-hop, Self-RAG, CRAG, and cross-encoder reranking. Benchmarked: CrossEncoder matches agentic recall at ~1000× lower latency.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <a href="https://github.com/Rudra1x/KnowledgeOS" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                                View on GitHub
+                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AgentPitch -->
+                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="p-6 flex-grow">
+                            <span class="text-sm text-accent font-medium">Agentic AI / LangChain</span>
+                            <h3 class="mt-2 text-xl font-semibold text-gray-900">AgentPitch — Agentic RFP Automation</h3>
+                            <p class="mt-3 text-base text-gray-600">
+                                An end-to-end agentic proposal automation system for IT services firms. Built on LangChain, Groq LLMs, and FAISS — auto-analyzes RFPs and generates tailored proposals. 68/68 tests passing, FastAPI backend with a production-ready UI.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <a href="https://github.com/Rudra1x/AgentPitch" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                                View on GitHub
+                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 1 (Quantum Water Contaminants) -->
                     <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
                         <div class="p-6 flex-grow">
                             <span class="text-sm text-accent font-medium">Quantum / ML</span>
                             <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum-Classical Pipeline for Classifying Water Contaminants</h3>
                             <p class="mt-3 text-base text-gray-600">
-                                Hybrid Quantum-Classical Neural Network (HQ-NN) to identify four different types of contaminant ions in water, using experimental data from photonic sensor.
+                                Hybrid Quantum-Classical Neural Network (HQ-NN) to identify four different types of contaminant ions in water, using experimental data from photonic sensor. Achieved 96.67% accuracy on IBM quantum hardware.
                             </p>
                         </div>
                         <div class="p-6 bg-gray-50">
@@ -633,91 +754,89 @@
             </div>
         </section>
 
-        <!-- Blog Placeholder Section -->
-        <section id="blog" class="bg-white py-24 sm:py-32">
+        <!-- Publications Section -->
+        <section id="publications" class="bg-white py-24 sm:py-32">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the Blog</h2>
-                    <p class="mt-4 text-lg text-gray-600">I also write about my findings, experiments, and tutorials. Check out my latest articles.</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Research & Publications</h2>
+                    <p class="mt-4 text-lg text-gray-600">7 publications across quantum optimization, hybrid quantum-classical systems, and quantum hardware experiments.</p>
                 </div>
-                
-                <!-- Blog Post Placeholders -->
-                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    
-                    <!-- Placeholder Card 1 -->
-                    <div class="project-card bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col border border-gray-200">
-                        <!-- SVG Icon -->
-                        <div class="w-full h-32 flex items-center justify-center p-6 opacity-30" aria-hidden="true">
-                            <svg viewBox="0 0 200 200" stroke="var(--accent-light)" fill="none" stroke-width="2">
-                                <circle cx="100" cy="100" r="10" fill="var(--accent-light)" />
-                                <ellipse cx="100" cy="100" rx="80" ry="30" />
-                                <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(60 100 100)" />
-                                <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(120 100 100)" />
-                            </svg>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-gray-500 font-medium">Coming Soon</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-700">My First Post on Quantum ML</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Another placeholder for a future article.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-100">
-                            <span class="text-gray-400 font-medium">Read more (coming soon)</span>
-                        </div>
-                    </div>
-                    
 
-                    <!-- Placeholder Card 2-->
-                    <div class="project-card bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col border border-gray-200">
-                        <!-- SVG Icon -->
-                        <div class="w-full h-32 flex items-center justify-center p-6 opacity-30" aria-hidden="true">
-                             <svg viewBox="0 0 200 200" stroke="var(--accent-light)" fill="var(--accent-light)" stroke-width="2">
-                                <line x1="50" y1="50" x2="100" y2="100" />
-                                <line x1="150" y1="50" x2="100" y2="100" />
-                                <line x1="50" y1="150" x2="100" y2="100" />
-                                <line x1="150" y1="150" x2="100" y2="100" />
-                                <circle cx="100" cy="100" r="12" />
-                                <circle cx="50" cy="50" r="12" />
-                                <circle cx="150" cy="50" r="12" />
-                                <circle cx="50" cy="150" r="12" />
-                                <circle cx="150" cy="150" r="12" />
-                            </svg>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-gray-500 font-medium">Coming Soon</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-700">A Deep Dive into VQEs</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Another placeholder for a future article.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-100">
-                            <span class="text-gray-400 font-medium">Read more (coming soon)</span>
+                <!-- Publication Cards -->
+                <div class="mt-16 flex flex-col gap-6">
+
+                    <!-- Paper 1: Aircraft Cargo Loading (most recent & applied) -->
+                    <div class="pub-card">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                            <div class="flex-grow">
+                                <div class="flex flex-wrap items-center gap-2 mb-2">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-accent">Article · Jul 2026</span>
+                                    <span class="text-xs text-gray-500">· IEEE TQCEBT'26</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Quantum-Inspired Optimization for Robust Aircraft Cargo Loading Using a QUBO Formulation</h3>
+                                <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma, Ravi Katukam, Arjun Nagulapally</p>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    Reformulates aircraft cargo loading as a QUBO problem, encoding both payload maximization and structural safety constraints. Classical heuristics produce fragile solutions near operational limits — the quantum-inspired approach yields robust placements under perturbation.
+                                </p>
+                            </div>
+                            <a href="https://www.researchgate.net/publication/410676182_Quantum-Inspired_Optimization_for_Robust_Aircraft_Cargo_Loading_Using_a_QUBO_Formulation" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
+                                Read Paper
+                                <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
                         </div>
                     </div>
-                    <!-- Placeholder Card 3 -->
-                    <div class="project-card bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col border border-gray-200">
-                        <!-- SVG Icon -->
-                        <div class="w-full h-32 flex items-center justify-center p-6 opacity-30" aria-hidden="true">
-                            <svg viewBox="0 0 200 200" stroke="var(--accent-light)" fill="none" stroke-width="2">
-                                <circle cx="100" cy="100" r="10" fill="var(--accent-light)" />
-                                <ellipse cx="100" cy="100" rx="80" ry="30" />
-                                <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(60 100 100)" />
-                                <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(120 100 100)" />
-                            </svg>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-gray-500 font-medium">Coming Soon</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-700">Quantum Machine Learning</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Another placeholder for a future article.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-100">
-                            <span class="text-gray-400 font-medium">Read more (coming soon)</span>
+
+                    <!-- Paper 2: Supply Chain Design -->
+                    <div class="pub-card">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                            <div class="flex-grow">
+                                <div class="flex flex-wrap items-center gap-2 mb-2">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-accent">Preprint · Jan 2026</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Bridging the Linear-Quadratic Gap: A Quantum-Classical Hybrid Approach to Robust Supply Chain Design</h3>
+                                <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma, Ravi Katukam, Arjun Nagulapally</p>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    Addresses the trade-off between demand coverage and facility overlap in urban logistics. Tested on a high-fidelity Delhi NCR dataset — hybrid quantum-classical solver outperforms classical optimization on the Pareto frontier of demand capture vs. overlap risk.
+                                </p>
+                            </div>
+                            <a href="https://www.researchgate.net/publication/399559986_Bridging_the_Linear-Quadratic_Gap_A_Quantum-Classical_Hybrid_Approach_to_Robust_Supply_Chain_Design" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
+                                Read Paper
+                                <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
                         </div>
                     </div>
+
+                    <!-- Paper 3: Heisenberg Spin Chain (flagship physics paper) -->
+                    <div class="pub-card">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                            <div class="flex-grow">
+                                <div class="flex flex-wrap items-center gap-2 mb-2">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-accent">Preprint · Dec 2025</span>
+                                    <span class="text-xs text-gray-500">· arXiv:2512.23009</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Symmetry-Preserving Variational Quantum Simulation of the Heisenberg Spin Chain on Noisy Quantum Hardware</h3>
+                                <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma</p>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    Investigates physics-informed ansatz design for VQE on NISQ devices. Demonstrates that symmetry-preserving circuits outperform hardware-efficient baselines on IQM Garnet hardware, with results validated against exact diagonalization.
+                                </p>
+                            </div>
+                            <a href="https://doi.org/10.48550/arXiv.2512.23009" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
+                                Read Paper
+                                <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- View all link -->
+                <div class="mt-10 text-center">
+                    <a href="https://www.researchgate.net/profile/Rudraksh-Sharma-8" target="_blank" rel="noopener" class="inline-flex items-center text-accent font-medium hover:text-accent-light">
+                        View all 7 publications on ResearchGate
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+
             </div>
         </section>
 
@@ -767,7 +886,7 @@
     <footer class="bg-white border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p class="text-center text-base text-gray-500">
-                &copy; 2025 Rudraksh Sharma. All rights reserved.
+                &copy; 2026 Rudraksh Sharma. All rights reserved.
             </p>
         </div>
     </footer>
@@ -913,4 +1032,3 @@
 
 </body>
 </html>
-
