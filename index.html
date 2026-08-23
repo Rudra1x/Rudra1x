@@ -5,489 +5,268 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rudraksh Sharma - Applied AI Engineer & Qiskit Advocate</title>
     <meta name="description" content="Rudraksh Sharma's portfolio. Data Scientist at AIONOS building production RAG systems and LLM applications. Qiskit Advocate, published researcher, and Berlin Kipu Quantum Hackathon 2026 3rd place winner.">
-    
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
-        /* --- High-Tech "Quantum" Theme Definition --- */
         :root {
-            --bg-base: #10121a;        /* Deep midnight slate */
-            --bg-content: #181b26;    /* Lighter content blocks */
+            --bg-base: #10121a;
+            --bg-content: #181b26;
             --bg-card-footer: #202433;
             --border-divider: #30354b;
-            
             --text-heading: #ffffff;
-            --text-primary: #d0d8f0;    /* Light, slightly blue text */
-            --text-muted: #7880a0;     /* Muted text */
-            
-            --accent: #7f5fff;         /* Electric Violet/Blue */
+            --text-primary: #d0d8f0;
+            --text-muted: #7880a0;
+            --accent: #7f5fff;
             --accent-light: #a08aff;
             --accent-glow-shadow: hsla(250, 100%, 70%, 0.3);
             --accent-glow-shadow-hover: hsla(250, 100%, 70%, 0.5);
             --accent-bg-fill: hsla(250, 100%, 70%, 0.1);
             --accent-bg-fill-border: hsla(250, 100%, 70%, 0.2);
-            --particle-color: hsla(230, 70%, 80%, 0.3); /* For canvas particle animation */
+            --particle-color: hsla(230, 70%, 80%, 0.3);
         }
-
-        /* --- Base Resets --- */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-primary);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-base); color: var(--text-primary); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         html { scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6 { text-shadow: 0 0 12px var(--accent-glow-shadow); }
+        a { transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease; }
 
-        /* Add "lit" effect to headings */
-        h1, h2, h3, h4, h5, h6 {
-            text-shadow: 0 0 12px var(--accent-glow-shadow);
-        }
-        
-        /* Smooth transitions for links */
-        a {
-            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
-        }
-
-        /* --- High-Tech Theme Overrides (Forcing Tailwind) --- */
-        
-        /* Header */
-        header {
-            /* Override bg-white/90 and backdrop-blur-sm */
-            background-color: hsla(230, 15%, 8%, 0.85) !important; 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
-        /* Backgrounds */
+        header { background-color: hsla(230, 15%, 8%, 0.85) !important; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
         .bg-white { background-color: var(--bg-content) !important; }
         .bg-gray-50 { background-color: var(--bg-card-footer) !important; }
         .bg-gray-100 { background-color: var(--bg-card-footer) !important; }
         .bg-gray-900 { background-color: var(--bg-base) !important; }
-        
-        /* Skill Tags */
-        .bg-blue-100 {
-            background-color: var(--accent-bg-fill) !important;
-            border: 1px solid var(--accent-bg-fill-border) !important;
-            transition: background-color 0.3s ease;
-        }
-        .bg-blue-100:hover {
-             background-color: hsla(250, 100%, 70%, 0.2) !important;
-        }
-
-        /* Button Hovers */
+        .bg-blue-100 { background-color: var(--accent-bg-fill) !important; border: 1px solid var(--accent-bg-fill-border) !important; transition: background-color 0.3s ease; }
+        .bg-blue-100:hover { background-color: hsla(250, 100%, 70%, 0.2) !important; }
         .hover\:bg-gray-50:hover { background-color: var(--accent-bg-fill) !important; }
-
-        /* Text */
         .text-gray-900 { color: var(--text-heading) !important; }
         .text-gray-800 { color: var(--text-heading) !important; }
         .text-gray-700 { color: var(--text-primary) !important; }
         .text-gray-600 { color: var(--text-primary) !important; }
         .text-gray-500 { color: var(--text-muted) !important; }
-        .text-gray-400 { color: #5c627d !important; } /* even more muted */
+        .text-gray-400 { color: #5c627d !important; }
         .text-gray-300 { color: var(--text-primary) !important; }
         .text-gray-100 { color: var(--text-heading) !important; }
-        
-        /* Skill Tag Text */
-        .text-blue-800 { 
-            color: var(--accent-light) !important; 
-            font-weight: 500;
-            text-shadow: 0 0 4px var(--accent-bg-fill);
-        }
-
-        /* Borders */
+        .text-blue-800 { color: var(--accent-light) !important; font-weight: 500; text-shadow: 0 0 4px var(--accent-bg-fill); }
         .border-gray-200 { border-color: var(--border-divider) !important; }
         .border-gray-300 { border-color: var(--accent) !important; }
-
-        /* Accent Palette */
         .text-accent { color: var(--accent) !important; }
         a.text-accent:hover { color: var(--accent-light) !important; }
-
-        /* Primary Accent Buttons (CTA) */
-        .bg-accent {
-            background-color: var(--accent) !important;
-            color: #10121a !important; /* Force dark text for contrast */
-            font-weight: 600 !important;
-            box-shadow: 0 5px 15px hsla(250, 100%, 70%, 0.25);
-        }
-        a.bg-accent:hover {
-            background-color: var(--accent-light) !important;
-            box-shadow: 0 2px 8px hsla(250, 100%, 70%, 0.15);
-            transform: translateY(-1px);
-        }
+        .bg-accent { background-color: var(--accent) !important; color: #10121a !important; font-weight: 600 !important; box-shadow: 0 5px 15px hsla(250, 100%, 70%, 0.25); }
+        a.bg-accent:hover { background-color: var(--accent-light) !important; box-shadow: 0 2px 8px hsla(250, 100%, 70%, 0.15); transform: translateY(-1px); }
         .border-accent { border-color: var(--accent) !important; }
-        
-        /* Secondary Button Overrides (View My Projects) */
-        a.text-gray-800 { 
-            color: var(--accent) !important; 
-            box-shadow: 0 0 0 1px var(--accent);
-        }
-        a.text-gray-800:hover {
-            background-color: var(--accent-bg-fill) !important;
-            box-shadow: 0 0 0 1px var(--accent-light);
-            color: var(--accent-light) !important; 
-        }
-        
-        /* Contact Icon Hovers */
-        #contact a[href^="mailto:"], #contact a[href="#"] {
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        #contact a[href^="mailto:"]:hover, #contact a[href="#"]:hover {
-            color: var(--accent-light) !important;
-            transform: translateY(-4px);
-        }
+        a.text-gray-800 { color: var(--accent) !important; box-shadow: 0 0 0 1px var(--accent); }
+        a.text-gray-800:hover { background-color: var(--accent-bg-fill) !important; box-shadow: 0 0 0 1px var(--accent-light); color: var(--accent-light) !important; }
+        #contact a[href^="mailto:"], #contact a[href="#"] { transition: transform 0.3s ease, color 0.3s ease; }
+        #contact a[href^="mailto:"]:hover, #contact a[href="#"]:hover { color: var(--accent-light) !important; transform: translateY(-4px); }
 
-        /* --- Custom Component Styling --- */
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease; border-top: 2px solid var(--border-divider); background-color: var(--bg-content) !important; box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.3); }
+        .project-card:hover { transform: translateY(-6px); border-top-color: var(--accent); box-shadow: 0 10px 20px hsla(250, 100%, 70%, 0.15), 0 4px 12px hsla(0, 0%, 0%, 0.3); }
+        .project-card a.text-accent { padding: 6px 10px; border-radius: 6px; border: 1px solid transparent; transition: all 0.3s ease; }
+        .project-card a.text-accent:hover { color: var(--accent-light) !important; background-color: var(--accent-bg-fill) !important; border-color: var(--accent-bg-fill-border) !important; text-shadow: 0 0 8px var(--accent-glow-shadow); }
 
-        /* Project card hover effect */
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
-            border-top: 2px solid var(--border-divider); /* Subtle top edge */
-            background-color: var(--bg-content) !important; /* Force override */
-            box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.3); /* Deeper shadow */
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-top-color: var(--accent); /* "Activate" edge */
-            box-shadow: 0 10px 20px hsla(250, 100%, 70%, 0.15), 0 4px 12px hsla(0, 0%, 0%, 0.3); /* Add accent glow */
-        }
-        
-        /* Project card "View on GitHub" button hover */
-        .project-card a.text-accent {
-            padding: 6px 10px;
-            border-radius: 6px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .project-card a.text-accent:hover {
-            color: var(--accent-light) !important;
-            background-color: var(--accent-bg-fill) !important;
-            border-color: var(--accent-bg-fill-border) !important;
-            text-shadow: 0 0 8px var(--accent-glow-shadow);
-        }
-        
-        /* Hero Particle Canvas */
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            opacity: 0.7;
-        }
-        /* Ensure hero content stays on top of canvas */
-        #home > div {
-            position: relative;
-            z-index: 20;
-        }
+        #particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; opacity: 0.7; }
+        #home > div { position: relative; z-index: 20; }
+        .svg-glow { filter: url(#glow); }
 
-        /* SVG Glow Filter */
-        .svg-glow {
-            filter: url(#glow);
-        }
+        /* === NEW: Section Headers === */
+        .section-overline { display: block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+        .section-accent-bar { display: block; width: 2rem; height: 2px; background-color: var(--accent); border-radius: 1px; margin-top: 0.65rem; margin-bottom: 1.25rem; }
 
-        /* Awards Strip */
-        .awards-strip {
-            background-color: var(--bg-content);
-            border-top: 1px solid var(--border-divider);
-            border-bottom: 1px solid var(--border-divider);
-        }
-        .award-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0.5rem 1.5rem;
-        }
-        .award-divider {
-            width: 1px;
-            height: 40px;
-            background-color: var(--border-divider);
-        }
-        .award-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            background-color: var(--accent-bg-fill);
-            border: 1px solid var(--accent-bg-fill-border);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
+        /* === NEW: Bento Grid === */
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .project-card-wide { grid-column: span 2; }
+        @media (max-width: 639px) { .bento-grid { grid-template-columns: 1fr; } .project-card-wide { grid-column: span 1; } }
+        @media (min-width: 640px) and (max-width: 1023px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
 
-        /* Publication cards */
-        .pub-card {
-            background-color: var(--bg-content);
-            border: 1px solid var(--border-divider);
-            border-left: 3px solid var(--accent);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .pub-card:hover {
-            border-left-color: var(--accent-light);
-            box-shadow: 0 4px 16px hsla(250, 100%, 70%, 0.12);
-        }
+        /* === NEW: Tech Stack Pills === */
+        .stack-pills { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.75rem; }
+        .stack-pill { display: inline-block; font-size: 0.63rem; font-weight: 500; padding: 2px 7px; border-radius: 4px; background-color: var(--bg-base); border: 1px solid var(--border-divider); color: var(--text-muted); letter-spacing: 0.02em; }
+        .card-metric { font-size: 0.7rem; font-weight: 600; color: var(--accent-light); margin-top: 0.6rem; }
+
+        /* === NEW: Pub Type Badges === */
+        .pub-badge { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
+        .pub-badge-article { background-color: var(--accent-bg-fill); border: 1px solid var(--accent-bg-fill-border); color: var(--accent-light); }
+        .pub-badge-preprint { background-color: transparent; border: 1px solid var(--border-divider); color: var(--text-muted); }
+
+        /* === NEW: Scroll Reveal === */
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* === NEW: Nav Active === */
+        .nav-active { color: var(--accent) !important; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+        /* === NEW: Skills Split === */
+        .skills-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+        @media (max-width: 639px) { .skills-split { grid-template-columns: 1fr; } }
+        .skills-group-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+        .skills-group-label.llm { color: var(--accent-light); }
+        .skills-group-label.quantum { color: #a78bfa; }
+        .skills-group { background-color: var(--bg-base); border: 1px solid var(--border-divider); border-radius: 0.5rem; padding: 1rem 1.15rem; }
+
+        /* === Awards Strip === */
+        .awards-strip { background-color: var(--bg-content); border-top: 1px solid var(--border-divider); border-bottom: 1px solid var(--border-divider); }
+        .award-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.5rem 1.5rem; }
+        .award-divider { width: 1px; height: 40px; background-color: var(--border-divider); }
+        .award-icon-wrap { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--accent-bg-fill-border); margin-bottom: 0.5rem; }
+        .award-icon-wrap.violet { background-color: var(--accent-bg-fill); }
+        .award-icon-wrap.gold { background-color: hsla(38, 90%, 50%, 0.12); border-color: hsla(38, 90%, 50%, 0.25); }
+        .award-icon-wrap.silver { background-color: hsla(220, 15%, 55%, 0.12); border-color: hsla(220, 15%, 55%, 0.25); }
+        .award-icon-svg { width: 1.2rem; height: 1.2rem; }
+        .award-icon-wrap.violet .award-icon-svg { color: var(--accent-light); }
+        .award-icon-wrap.gold .award-icon-svg { color: #d4a017; }
+        .award-icon-wrap.silver .award-icon-svg { color: #9aa0b4; }
+
+        /* === Pub Cards === */
+        .pub-card { background-color: var(--bg-content); border: 1px solid var(--border-divider); border-left: 3px solid var(--accent); border-radius: 0.5rem; padding: 1.5rem; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .pub-card:hover { border-left-color: var(--accent-light); box-shadow: 0 4px 16px hsla(250, 100%, 70%, 0.12); }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- SVG Filter Definition -->
-    <!-- This is hidden, but provides the 'glow' effect for SVGs -->
-    <svg width="0" height="0" style="position:absolute">
-      <defs>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-    </svg>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+</svg>
 
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo / Name -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold text-gray-900">Rudraksh Sharma</a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-accent font-medium">About</a>
-                    <a href="#projects" class="text-gray-600 hover:text-accent font-medium">Projects</a>
-                    <a href="#publications" class="text-gray-600 hover:text-accent font-medium">Publications</a>
-                    <a href="#contact" class="text-gray-600 hover:text-accent font-medium">Contact</a>
-                    <a href="Rudraksh_Sharma_CV.pdf" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent hover:bg-blue-700">
-                        <!-- CV Download Icon -->
-                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                        Download CV
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
-                        <span class="sr-only">Open main menu</span>
-                        <!-- Hamburger Icon -->
-                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <!-- Close Icon -->
-                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+                <a href="#" class="text-xl font-bold text-gray-900">Rudraksh Sharma</a>
             </div>
-        </nav>
-        
-        <!-- Mobile Menu (Collapsible) -->
-        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">About</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Projects</a>
-                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Publications</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Contact</a>
-                <a href="Rudraksh_Sharma_CV.pdf" class="block w-full text-left px-3 py-2 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-blue-700">
+            <div class="hidden md:flex md:items-center md:space-x-8">
+                <a href="#about" class="nav-link text-gray-600 hover:text-accent font-medium">About</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:text-accent font-medium">Projects</a>
+                <a href="#publications" class="nav-link text-gray-600 hover:text-accent font-medium">Publications</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-accent font-medium">Contact</a>
+                <a href="Rudraksh_Sharma_CV.pdf" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent hover:bg-blue-700">
+                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                     Download CV
                 </a>
             </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent">
+                    <span class="sr-only">Open main menu</span>
+                    <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
         </div>
-    </header>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">About</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Projects</a>
+            <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Publications</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 mobile-menu-link">Contact</a>
+            <a href="Rudraksh_Sharma_CV.pdf" class="block w-full text-left px-3 py-2 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-blue-700">Download CV</a>
+        </div>
+    </div>
+</header>
 
-    <!-- Main Content Wrapper -->
-    <main class="pt-16"> <!-- Add padding-top to avoid content being hidden by fixed header -->
+<main class="pt-16">
 
-        <!-- Hero Section -->
-        <section id="home" class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 flex flex-col-reverse md:flex-row items-center overflow-hidden">
-            
-            <!-- Particle Canvas -->
-            <canvas id="particle-canvas"></canvas>
+<!-- Hero Section -->
+<section id="home" class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 flex flex-col-reverse md:flex-row items-center overflow-hidden">
+    <canvas id="particle-canvas"></canvas>
+    <div class="w-full md:w-2/3 text-center md:text-left">
+        <span class="text-accent font-semibold">Rudraksh Sharma</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-2 mb-6 tracking-tight">
+            Applied AI Engineer &amp; Qiskit Advocate
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
+            Data Scientist at AIONOS building production RAG systems, LLM applications, and hybrid quantum-classical optimization solutions. Published researcher with 7 papers and international hackathon recognition.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-blue-700 shadow-md">Get in Touch</a>
+            <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-50 shadow-md">View My Projects</a>
+        </div>
+    </div>
+    <div class="w-full md:w-1/3 mt-10 md:mt-0 mb-12 md:mb-0 flex items-center justify-center p-4">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="svg-glow" opacity="0.8">
+            <style>
+                @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+                @keyframes rotate-fast { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+                .orbit-1 { animation: rotate-slow 20s linear infinite; transform-origin: center; }
+                .orbit-2 { animation: rotate-fast 15s linear infinite; transform-origin: center; }
+                .node-color { fill: var(--text-primary); }
+                .accent-glow-fill { fill: var(--accent); }
+            </style>
+            <g stroke-width="0.5"><line x1="10" x2="190" y1="100"/><line x1="100" x2="100" y1="10" y2="190"/></g>
+            <g class="orbit-1"><circle cx="100" cy="100" r="60" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 4"/></g>
+            <g class="orbit-2"><circle cx="100" cy="100" r="80" fill="none" stroke="var(--text-muted)" stroke-width="0.5" stroke-dasharray="2 2"/></g>
+            <g class="node-color"><circle cx="100" cy="10" r="3"/><circle cx="10" cy="100" r="3"/><circle cx="190" cy="100" r="3"/><circle cx="100" cy="190" r="3"/></g>
+            <circle class="accent-glow-fill" cx="100" cy="100" r="12"/>
+        </svg>
+    </div>
+</section>
 
-            <!-- Text Content -->
-            <div class="w-full md:w-2/3 text-center md:text-left">
-                <span class="text-accent font-semibold">Rudraksh Sharma</span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-2 mb-6 tracking-tight">
-                    Applied AI Engineer & Qiskit Advocate
-                </h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
-                    Data Scientist at AIONOS building production RAG systems, LLM applications, and hybrid quantum-classical optimization solutions. Published researcher with 7 papers and international hackathon recognition.
-                </p>
-                <!-- Action Buttons -->
-                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-blue-700 shadow-md">
-                        Get in Touch
-                    </a>
-                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-800 bg-white hover:bg-gray-50 shadow-md">
-                        View My Projects
-                    </a>
+<!-- About Section -->
+<section id="about" class="bg-white py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-12">
+            <div class="lg:col-span-1">
+                <span class="section-overline">My Background</span>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Me</h2>
+                <span class="section-accent-bar"></span>
+                <div class="hidden lg:flex items-center justify-center mt-8" aria-hidden="true">
+                    <svg width="400" height="300" viewBox="100 0 200 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <style>
+                            @keyframes pulse-dot { 0%,100%{fill:var(--accent-light);opacity:1} 50%{fill:var(--text-muted);opacity:0.7} }
+                            .p1{animation:pulse-dot 3s ease-in-out infinite}
+                            .p2{animation:pulse-dot 3s ease-in-out 0.5s infinite}
+                            .p3{animation:pulse-dot 3s ease-in-out 1s infinite}
+                            .p4{animation:pulse-dot 3s ease-in-out 1.5s infinite}
+                            .p5{animation:pulse-dot 3s ease-in-out 2s infinite}
+                            .p6{animation:pulse-dot 3s ease-in-out 2.5s infinite}
+                            @keyframes data-pulse{from{stroke-dashoffset:300}to{stroke-dashoffset:0}}
+                            .pulse-line{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:20 280;animation:data-pulse 4s linear infinite;opacity:0.8}
+                            .l2{animation-delay:-2s}.l3{animation-delay:-1s}.l4{animation-delay:-3s}
+                        </style>
+                        <g stroke="var(--border-divider)" stroke-width="1">
+                            <path d="M50 20 L50 280 M100 20 L100 280 M150 20 L150 280"/>
+                            <path d="M50 20 L150 20 M50 100 L150 100 M50 180 L150 180 M50 280 L150 280"/>
+                            <path d="M50 20 L100 100 M100 100 L150 20"/>
+                            <path d="M50 100 L100 180 M100 180 L150 100"/>
+                            <path d="M50 180 L100 280 M100 280 L150 180"/>
+                        </g>
+                        <g>
+                            <path class="pulse-line l1" d="M50 20 L50 280"/>
+                            <path class="pulse-line l2" d="M150 280 L150 20"/>
+                            <path class="pulse-line l3" d="M50 100 L150 100"/>
+                            <path class="pulse-line l4" d="M50 180 L100 280 L150 180"/>
+                        </g>
+                        <g>
+                            <circle cx="50" cy="20" r="5" class="p1"/><circle cx="100" cy="20" r="5" class="p2"/><circle cx="150" cy="20" r="5" class="p3"/>
+                            <circle cx="50" cy="100" r="5" class="p4"/><circle cx="100" cy="100" r="5" class="p5"/><circle cx="150" cy="100" r="5" class="p6"/>
+                            <circle cx="50" cy="180" r="5" class="p1"/><circle cx="100" cy="180" r="5" class="p2"/><circle cx="150" cy="180" r="5" class="p3"/>
+                            <circle cx="50" cy="280" r="5" class="p4"/><circle cx="100" cy="280" r="5" class="p5"/><circle cx="150" cy="280" r="5" class="p6"/>
+                        </g>
+                    </svg>
                 </div>
             </div>
-            
-            <!-- Animated Hero Graphic (Fixed) -->
-            <div class="w-full md:w-1/3 mt-10 md:mt-0 mb-12 md:mb-0 flex items-center justify-center p-4">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="svg-glow" opacity="0.8">
-                    <style>
-                        /* Animate the orbits */
-                        @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-                        @keyframes rotate-fast { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-                        
-                        .orbit-1 { animation: rotate-slow 20s linear infinite; transform-origin: center; }
-                        .orbit-2 { animation: rotate-fast 15s linear infinite; transform-origin: center; }
-                        
-                        /* Use CSS variables from the main stylesheet */
-                        /*.line-color { stroke: var(--border-divider); }*/
-                        .node-color { fill: var(--text-primary); }
-                        .accent-glow-fill { fill: var(--accent); }
-                        .accent-glow-stroke { stroke: var(--accent-light); }
-                    </style>
-                    
-                    <!-- Main Grid/Network (Simplified) -->
-                    <g class="line-color" stroke-width="0.5">
-                        <line x1="10" x2="190" y1="100" />
-                        <line x1="100" x2="100" y1="10" y2="190" />
-                    </g>
-                    
-                    <!-- Orbiting Rings -->
-                    <g class="orbit-1">
-                        <circle cx="100" cy="100" r="60" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 4" />
-                    </g>
-                    <g class="orbit-2">
-                        <circle cx="100" cy="100" r="80" fill="none" stroke="var(--text-muted)" stroke-width="0.5" stroke-dasharray="2 2" />
-                    </g>
-
-                    <!-- Data Nodes (Simplified) -->
-                    <g class="node-color">
-                        <circle cx="100" cy="10" r="3" />
-                        <circle cx="10" cy="100" r="3" />
-                        <circle cx="190" cy="100" r="3" />
-                        <circle cx="100" cy="190" r="3" />
-                    </g>
-                    
-                    <!-- Central Qubit/Core -->
-                    <circle class="accent-glow-fill" cx="100" cy="100" r="12" />
-                </svg>
-            </div>
-
-        </section>
-
-        <!-- === MODIFIED: About Me Section === -->
-        <section id="about" class="bg-white py-24 sm:py-32">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-12">
-                    
-                    <!-- Section Title & NEW Graphic -->
-                    <div class="lg:col-span-1">
-                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Me</h2>
-                        
-                        <!-- === NEW: Animated Data Lattice Graphic === -->
-                        <div class="hidden lg:flex items-center justify-center mt-16" aria-hidden="true">
-                            <svg width="400" height="300" viewBox="100 0 200 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <style>
-                                    @keyframes pulse-dot {
-                                        0%, 100% { fill: var(--accent-light); opacity: 1; }
-                                        50% { fill: var(--text-muted); opacity: 0.7; }
-                                    }
-                                    .p1 { animation: pulse-dot 3s ease-in-out infinite; }
-                                    .p2 { animation: pulse-dot 3s ease-in-out 0.5s infinite; }
-                                    .p3 { animation: pulse-dot 3s ease-in-out 1s infinite; }
-                                    .p4 { animation: pulse-dot 3s ease-in-out 1.5s infinite; }
-                                    .p5 { animation: pulse-dot 3s ease-in-out 2s infinite; }
-                                    .p6 { animation: pulse-dot 3s ease-in-out 2.5s infinite; }
-
-                                    @keyframes data-pulse {
-                                        from { stroke-dashoffset: 300; }
-                                        to { stroke-dashoffset: 0; }
-                                    }
-                                    .pulse-line {
-                                        stroke: var(--accent);
-                                        stroke-width: 1.5;
-                                        stroke-dasharray: 20 280;
-                                        animation: data-pulse 4s linear infinite;
-                                        opacity: 0.8;
-                                    }
-                                    .l2 { animation-delay: -2s; }
-                                    .l3 { animation-delay: -1s; }
-                                    .l4 { animation-delay: -3s; }
-                                </style>
-                                
-                                <!-- Static Grid Lines -->
-                                <g stroke="var(--border-divider)" stroke-width="1">
-                                    <!-- Verticals -->
-                                    <path d="M50 20 L50 280 M100 20 L100 280 M150 20 L150 280" />
-                                    <!-- Horizontals -->
-                                    <path d="M50 20 L150 20 M50 100 L150 100 M50 180 L150 180 M50 280 L150 280" />
-                                    <!-- Diagonals -->
-                                    <path d="M50 20 L100 100 M100 100 L150 20" />
-                                    <path d="M50 100 L100 180 M100 180 L150 100" />
-                                    <path d="M50 180 L100 280 M100 280 L150 180" />
-                                </g>
-                                
-                                <!-- Animated Pulse Lines -->
-                                <g>
-                                    <path class="pulse-line l1" d="M50 20 L50 280" />
-                                    <path class="pulse-line l2" d="M150 280 L150 20" />
-                                    <path class="pulse-line l3" d="M50 100 L150 100" />
-                                    <path class="pulse-line l4" d="M50 180 L100 280 L150 180" />
-                                </g>
-
-                                <!-- Nodes -->
-                                <g>
-                                    <circle cx="50" cy="20" r="5" class="p1" />
-                                    <circle cx="100" cy="20" r="5" class="p2" />
-                                    <circle cx="150" cy="20" r="5" class="p3" />
-                                    
-                                    <circle cx="50" cy="100" r="5" class="p4" />
-                                    <circle cx="100" cy="100" r="5" class="p5" />
-                                    <circle cx="150" cy="100" r="5" class="p6" />
-                                    
-                                    <circle cx="50" cy="180" r="5" class="p1" />
-                                    <circle cx="100" cy="180" r="5" class="p2" />
-                                    <circle cx="150" cy="180" r="5" class="p3" />
-                                    
-                                    <circle cx="50" cy="280" r="5" class="p4" />
-                                    <circle cx="100" cy="280" r="5" class="p5" />
-                                    <circle cx="150" cy="280" r="5" class="p6" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <!-- Content -->
-                    <div class="lg:col-span-2 mt-8 lg:mt-0 space-y-8">
-                        <p class="text-lg text-gray-600">
-                            Data Scientist at AIONOS and Technical Lead at Beerantum, working across LLM engineering and quantum optimization. My day-to-day is building production RAG systems — embedding pipelines, hybrid retrieval (BM25, FAISS, Qdrant), and advanced rerankers including cross-encoders and BGE. KnowledgeOS, my flagship open-source project, spans the full retrieval stack from raw ingestion to benchmarked agentic retrieval.
-                        </p>
-                        <p class="text-lg text-gray-600">
-                            On the quantum side, I work on hybrid quantum-classical optimization for logistics, aviation, and supply chain problems, with published research and industry work through the QuBri Initiative. My Physics background (MSc, NSUT) shapes how I think about both domains — optimization at scale is an energy-landscape problem regardless of whether the solver is a QUBO on annealing hardware or a loss surface in PyTorch. The interesting engineering is always in the composition.
-                        </p>
-                        
-                        <!-- Skills -->
-                        <div>
-                            <!-- Added Icon to Skills Title -->
-                            <h3 class="flex items-center text-2xl font-semibold text-gray-800 mb-4">
-                                <svg class="w-6 h-6 text-accent-light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 11a9 9 0 0 1 9 9" />
-                                    <path d="M4 4a16 16 0 0 1 16 16" />
-                                    <circle cx="5" cy="19" r="1" />
-                                </svg>
-                                <span class="ml-3">Core Skills</span>
-                            </h3>
-                            <div class="flex flex-wrap gap-3">
+            <div class="lg:col-span-2 mt-8 lg:mt-0 space-y-6">
+                <p class="text-lg text-gray-600">
+                    Data Scientist at AIONOS and Technical Lead at Beerantum, working across LLM engineering and quantum optimization. My day-to-day is building production RAG systems: embedding pipelines, hybrid retrieval (BM25, FAISS, Qdrant), and advanced rerankers including cross-encoders and BGE. KnowledgeOS, my flagship open-source project, spans the full retrieval stack from raw ingestion to benchmarked agentic retrieval.
+                </p>
+                <p class="text-lg text-gray-600">
+                    On the quantum side, I work on hybrid quantum-classical optimization for logistics, aviation, and supply chain problems, with published research and industry work through the QuBri Initiative. My Physics background (MSc, NSUT) shapes how I think about both domains. Optimization at scale is an energy-landscape problem regardless of whether the solver is a QUBO on annealing hardware or a loss surface in PyTorch. The interesting engineering is always in the composition.
+                </p>
+                <div>
+                    <h3 class="flex items-center text-2xl font-semibold text-gray-800 mb-4">
+                        <svg class="w-6 h-6 text-accent-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                        <span class="ml-3">Core Skills</span>
+                    </h3>
+                    <div class="skills-split">
+                        <div class="skills-group">
+                            <span class="skills-group-label llm">AI / LLM Engineering</span>
+                            <div class="flex flex-wrap gap-2">
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Python</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">LLM Engineering</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">RAG</span>
@@ -499,536 +278,500 @@
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">FastAPI</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">MLflow</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Docker</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Qiskit</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Pennylane</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Dwave-Ocean</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Quantum Computing</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Quantum Machine Learning</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Deep Learning</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Machine Learning</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">scikit-learn</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">NLP</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">scikit-learn</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">SQL</span>
+                            </div>
+                        </div>
+                        <div class="skills-group">
+                            <span class="skills-group-label quantum">Quantum Computing</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Qiskit</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">PennyLane</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">D-Wave Ocean</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Quantum ML</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">QUBO</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">VQE</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">QAOA</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Quantum Annealing</span>
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1.5 rounded-full">Statistical Analysis</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Awards Strip -->
-        <section class="awards-strip py-10">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-8">Recognition & Awards</p>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-0">
-                    
-                    <!-- Award 1 -->
-                    <div class="award-item">
-                        <div class="award-badge">🏆</div>
-                        <p class="font-semibold text-gray-900 text-sm">Qiskit Fall Fest 2025</p>
-                        <p class="text-xs text-accent mt-0.5 font-medium">Winner</p>
-                    </div>
-
-                    <div class="award-divider hidden md:block mx-8"></div>
-
-                    <!-- Award 2 -->
-                    <div class="award-item">
-                        <div class="award-badge">🥇</div>
-                        <p class="font-semibold text-gray-900 text-sm">QIntern 2025</p>
-                        <p class="text-xs text-accent mt-0.5 font-medium">First Team Award</p>
-                    </div>
-
-                    <div class="award-divider hidden md:block mx-8"></div>
-
-                    <!-- Award 3 -->
-                    <div class="award-item">
-                        <div class="award-badge">🥉</div>
-                        <p class="font-semibold text-gray-900 text-sm">Berlin Kipu Quantum Hackathon 2026</p>
-                        <p class="text-xs text-accent mt-0.5 font-medium">3rd Place Winner</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-24 sm:py-32">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Featured Projects</h2>
-                    <p class="mt-4 text-lg text-gray-600">A selection of my work in Quantum computing, Machine learning, and Data science.</p>
-                </div>
-                
-                <!-- Projects Grid -->
-                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-                    <!-- KnowledgeOS — HERO PROJECT -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">LLM Engineering / MLOps</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">KnowledgeOS — Production RAG Platform</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                A modular, production-grade RAG platform spanning the full retrieval stack: 5+ embedding strategies, hybrid indexing (BM25, FAISS, Qdrant, RAPTOR), and advanced retrievers including multi-hop, Self-RAG, CRAG, and cross-encoder reranking. Benchmarked: CrossEncoder matches agentic recall at ~1000× lower latency.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/KnowledgeOS" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- AgentPitch -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Agentic AI / LangChain</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">AgentPitch — Agentic RFP Automation</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                An end-to-end agentic proposal automation system for IT services firms. Built on LangChain, Groq LLMs, and FAISS — auto-analyzes RFPs and generates tailored proposals. 68/68 tests passing, FastAPI backend with a production-ready UI.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/AgentPitch" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 1 (Quantum Water Contaminants) -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum / ML</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum-Classical Pipeline for Classifying Water Contaminants</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Hybrid Quantum-Classical Neural Network (HQ-NN) to identify four different types of contaminant ions in water, using experimental data from photonic sensor. Achieved 96.67% accuracy on IBM quantum hardware.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/Classification-of-Ions-in-Water-using-Quantum-Machine-learning" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum / ML / Finance</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Hybrid Classical-Quantum Neural Network</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Building a Hybrid Quantum-Classical RNN (LSTM) to predict stock index closing prices, leveraging a VQC for enhanced feature learning.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/Classical-Quantum-Neural-Network-for-Financial-Stock-Forecast" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Data Science / ML</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Data Science Projects Collection</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                A repository of various data science projects, including anomaly detection in industrial datasets and air quality prediction using regression models.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/Data-Science-Projects" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum Computing</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum-Powered Portfolio Optimizer</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Implemented a Quantum Approximate Optimization Algorithm (QAOA) on financial datasets to optimize a 31-asset portfolio, achieving superior returns.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/vbinvu68/Quantum-algorithms-for-Portfolio-Optimization" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 5 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum Computing</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Optimizing Energy Demand Response</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Utilizing quantum algorithms to optimize energy demand response systems, improving efficiency and stability in power grids.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/vbinvu68/Optimizing-Energy-Demand-Response-using-quantum-algorithms" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 6 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum Chemistry</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">VQE for Hydrogen Molecule</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Implemented the Variational Quantum Eigensolver (VQE) in Qiskit to estimate the ground-state energy of the H₂ molecule.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/VQE-for-Hydrogen" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 7 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum ML</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum Machine Learning Model For Iris</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                A foundational QML project applying quantum circuits to the classic Iris dataset for classification.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/QML-model-with-Iris-dataset." class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 8 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">Quantum Optimization</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum Route Optimization</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                Applying quantum algorithms to solve complex route optimization problems, similar to the Traveling Salesperson Problem (TSP).
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/Quantum-Route-Optimisation" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 9 -->
-                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <span class="text-sm text-accent font-medium">NLP / Machine Learning</span>
-                            <h3 class="mt-2 text-xl font-semibold text-gray-900">Spam Classifier with NLP</h3>
-                            <p class="mt-3 text-base text-gray-600">
-                                A classic machine learning project using Natural Language Processing (NLP) techniques to build a highly accurate spam classifier.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                            <a href="https://github.com/Rudra1x/Spam-Classifier-with-NLP" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
-                                View on GitHub
-                                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="bg-white py-24 sm:py-32">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Research & Publications</h2>
-                    <p class="mt-4 text-lg text-gray-600">7 publications across quantum optimization, hybrid quantum-classical systems, and quantum hardware experiments.</p>
-                </div>
-
-                <!-- Publication Cards -->
-                <div class="mt-16 flex flex-col gap-6">
-
-                    <!-- Paper 1: Aircraft Cargo Loading (most recent & applied) -->
-                    <div class="pub-card">
-                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                            <div class="flex-grow">
-                                <div class="flex flex-wrap items-center gap-2 mb-2">
-                                    <span class="text-xs font-semibold uppercase tracking-wider text-accent">Article · Jul 2026</span>
-                                    <span class="text-xs text-gray-500">· IEEE TQCEBT'26</span>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">Quantum-Inspired Optimization for Robust Aircraft Cargo Loading Using a QUBO Formulation</h3>
-                                <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma, Ravi Katukam, Arjun Nagulapally</p>
-                                <p class="mt-2 text-sm text-gray-600">
-                                    Reformulates aircraft cargo loading as a QUBO problem, encoding both payload maximization and structural safety constraints. Classical heuristics produce fragile solutions near operational limits — the quantum-inspired approach yields robust placements under perturbation.
-                                </p>
-                            </div>
-                            <a href="https://www.researchgate.net/publication/410676182_Quantum-Inspired_Optimization_for_Robust_Aircraft_Cargo_Loading_Using_a_QUBO_Formulation" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
-                                Read Paper
-                                <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Paper 2: Supply Chain Design -->
-                    <div class="pub-card">
-                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                            <div class="flex-grow">
-                                <div class="flex flex-wrap items-center gap-2 mb-2">
-                                    <span class="text-xs font-semibold uppercase tracking-wider text-accent">Preprint · Jan 2026</span>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">Bridging the Linear-Quadratic Gap: A Quantum-Classical Hybrid Approach to Robust Supply Chain Design</h3>
-                                <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma, Ravi Katukam, Arjun Nagulapally</p>
-                                <p class="mt-2 text-sm text-gray-600">
-                                    Addresses the trade-off between demand coverage and facility overlap in urban logistics. Tested on a high-fidelity Delhi NCR dataset — hybrid quantum-classical solver outperforms classical optimization on the Pareto frontier of demand capture vs. overlap risk.
-                                </p>
-                            </div>
-                            <a href="https://www.researchgate.net/publication/399559986_Bridging_the_Linear-Quadratic_Gap_A_Quantum-Classical_Hybrid_Approach_to_Robust_Supply_Chain_Design" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
-                                Read Paper
-                                <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Paper 3: Heisenberg Spin Chain (flagship physics paper) -->
-                    <div class="pub-card">
-                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                            <div class="flex-grow">
-                                <div class="flex flex-wrap items-center gap-2 mb-2">
-                                    <span class="text-xs font-semibold uppercase tracking-wider text-accent">Preprint · Dec 2025</span>
-                                    <span class="text-xs text-gray-500">· arXiv:2512.23009</span>
-                                </div>
-                                <h3 class="text-lg font-semibold text-gray-900">Symmetry-Preserving Variational Quantum Simulation of the Heisenberg Spin Chain on Noisy Quantum Hardware</h3>
-                                <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma</p>
-                                <p class="mt-2 text-sm text-gray-600">
-                                    Investigates physics-informed ansatz design for VQE on NISQ devices. Demonstrates that symmetry-preserving circuits outperform hardware-efficient baselines on IQM Garnet hardware, with results validated against exact diagonalization.
-                                </p>
-                            </div>
-                            <a href="https://doi.org/10.48550/arXiv.2512.23009" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
-                                Read Paper
-                                <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- View all link -->
-                <div class="mt-10 text-center">
-                    <a href="https://www.researchgate.net/profile/Rudraksh-Sharma-8" target="_blank" rel="noopener" class="inline-flex items-center text-accent font-medium hover:text-accent-light">
-                        View all 7 publications on ResearchGate
-                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-24 sm:py-32 bg-gray-900 text-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Get in Touch</h2>
-                <p class="mt-4 text-lg text-gray-300">
-                    I'm open to discussing new projects, research collaboration, or freelance opportunities.
-                </p>
-                
-                <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
-                    <!-- Email -->
-                    <a href="mailto:Ranup55novo@gmail.com" class="flex flex-col items-center text-gray-100 hover:text-white">
-                        <svg class="w-10 h-10 mb-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <span class="font-medium">Ranup55novo@gmail.com</span>
-                    </a>
-                    
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/rudraksh-sharma2023" class="flex flex-col items-center text-gray-100 hover:text-white">
-                        <svg class="w-10 h-10 mb-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        <span class="font-medium">LinkedIn</span>
-                    </a>
-                    
-                    <!-- Phone -->
-                    <span class="flex flex-col items-center text-gray-100">
-                        <svg class="w-10 h-10 mb-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span class="font-medium">+91 7618581993</span>
-                    </span>
-                </div>
-                
-                <!-- Final CV Download Button -->
-                <div class="mt-16">
-                     <a href="Rudraksh_Sharma_CV.pdf" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-100 shadow-md">
-                        <!-- CV Download Icon -->
-                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 11 17 10"/><line x1="12" x2="12" y1="11" y2="3"/></svg>
-                        Download CV
-                    </a>
-                </div>
-
-            </div>
-        </section>
-        
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <p class="text-center text-base text-gray-500">
-                &copy; 2026 Rudraksh Sharma. All rights reserved.
-            </p>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- === MODIFIED: Main JavaScript Block === -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- Mobile Menu Logic ---
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIconOpen = document.getElementById('menu-icon-open');
-            const menuIconClose = document.getElementById('menu-icon-close');
-            
-            menuButton.addEventListener('click', () => {
-                const isOpen = mobileMenu.classList.toggle('hidden');
-                menuIconOpen.classList.toggle('hidden', !isOpen);
-                menuIconClose.classList.toggle('hidden', isOpen);
-            });
+<!-- Awards Strip -->
+<section class="awards-strip py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-xs font-semibold uppercase tracking-widest text-gray-500 mb-8">Recognition &amp; Awards</p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-0">
+            <div class="award-item">
+                <div class="award-icon-wrap violet">
+                    <svg class="award-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </div>
+                <p class="font-semibold text-gray-900 text-sm">Qiskit Fall Fest 2025</p>
+                <p class="text-xs text-accent mt-0.5 font-medium">Winner</p>
+            </div>
+            <div class="award-divider hidden md:block mx-10"></div>
+            <div class="award-item">
+                <div class="award-icon-wrap gold">
+                    <svg class="award-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg>
+                </div>
+                <p class="font-semibold text-gray-900 text-sm">QIntern 2025</p>
+                <p class="text-xs text-accent mt-0.5 font-medium">First Team Award</p>
+            </div>
+            <div class="award-divider hidden md:block mx-10"></div>
+            <div class="award-item">
+                <div class="award-icon-wrap silver">
+                    <svg class="award-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </div>
+                <p class="font-semibold text-gray-900 text-sm">Berlin Kipu Quantum Hackathon 2026</p>
+                <p class="text-xs text-accent mt-0.5 font-medium">3rd Place Winner</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuIconOpen.classList.remove('hidden');
-                    menuIconClose.classList.add('hidden');
-                });
-            });
+<!-- Projects Section -->
+<section id="projects" class="py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <span class="section-overline">Featured Work</span>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h2>
+            <span class="section-accent-bar"></span>
+            <p class="text-lg text-gray-600 max-w-2xl">Production systems, research code, and applied AI across LLM engineering and quantum optimization.</p>
+        </div>
 
-            // --- Smooth Scrolling Logic ---
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') !== '#') {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        
-                        if (targetElement) {
-                            const headerOffset = 64; // 4rem or 16 * 4
-                            const elementPosition = targetElement.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        <!-- Bento Grid -->
+        <div class="bento-grid">
 
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
+            <!-- KnowledgeOS WIDE HERO CARD -->
+            <div class="project-card project-card-wide bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="0">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">LLM Engineering / MLOps</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">KnowledgeOS: Production RAG Platform</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        A modular, benchmark-driven retrieval platform built from first principles across 6 milestones. Covers the complete pipeline: 5+ embedding strategies, hybrid indexing (BM25, FAISS, Qdrant, RAPTOR), and 8 retrieval strategies including multi-hop, Self-RAG, CRAG, and agentic ReAct. Benchmarked end-to-end: CrossEncoder reranker matches agentic recall at 72x lower latency.
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">Python</span>
+                        <span class="stack-pill">FAISS</span>
+                        <span class="stack-pill">Qdrant</span>
+                        <span class="stack-pill">ChromaDB</span>
+                        <span class="stack-pill">BGE Reranker</span>
+                        <span class="stack-pill">Sentence Transformers</span>
+                        <span class="stack-pill">Ollama</span>
+                        <span class="stack-pill">OpenRouter</span>
+                    </div>
+                    <p class="card-metric">recall@1 = 1.000 &nbsp;|&nbsp; CrossEncoder at 190ms/query &nbsp;|&nbsp; 788x L1 cache speedup</p>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/KnowledgeOS" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
 
-            // --- Particle Canvas Animation ---
-            const canvas = document.getElementById('particle-canvas');
-            if (canvas) {
-                const ctx = canvas.getContext('2d');
-                let particles = [];
-                let particleCount = 60; // Keep it minimal
+            <!-- Finetune-Pipeline -->
+            <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="100">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">LLM Engineering</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">Finetune-Pipeline</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        End-to-end domain SLM fine-tuning platform. Point at any document corpus, generate synthetic training data, fine-tune via QLoRA on Kaggle, export to GGUF, deploy with Ollama. Switch clients by editing one config file.
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">QLoRA</span>
+                        <span class="stack-pill">Unsloth</span>
+                        <span class="stack-pill">GGUF</span>
+                        <span class="stack-pill">Ollama</span>
+                        <span class="stack-pill">HuggingFace</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/Finetune-Pipeline" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
 
-                // Get color from CSS variable
-                const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color').trim() || 'hsla(230, 70%, 80%, 0.3)';
+            <!-- Sentinel-AI -->
+            <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="200">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">LLM Security</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">Sentinel-AI</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        7-layer adversarial defense framework for LLM applications. Detects indirect prompt injection, token smuggling, sandbox escapes, social engineering, and RAG exploitation. 50-test suite, 0% false positives on legitimate requests.
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">FastAPI</span>
+                        <span class="stack-pill">Embeddings</span>
+                        <span class="stack-pill">Python</span>
+                    </div>
+                    <p class="card-metric">90% detection rate &nbsp;|&nbsp; 0% false positives</p>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/Sentinel-Ai" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
 
-                function resizeCanvas() {
-                    const heroSection = document.getElementById('home');
-                    canvas.width = heroSection.offsetWidth;
-                    canvas.height = heroSection.offsetHeight;
+            <!-- AgentPitch -->
+            <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="0">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">Agentic AI / LangChain</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">AgentPitch: Agentic RFP Automation</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        End-to-end agentic proposal automation for IT services firms. Auto-analyzes RFPs and generates tailored proposals. 68/68 tests passing, FastAPI backend with a production-ready UI.
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">LangChain</span>
+                        <span class="stack-pill">Groq LLMs</span>
+                        <span class="stack-pill">FAISS</span>
+                        <span class="stack-pill">FastAPI</span>
+                    </div>
+                    <p class="card-metric">68/68 tests passing</p>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/AgentPitch" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Clinical-Doc-AI -->
+            <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="100">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">Applied AI / NLP</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">Clinical-Doc-AI</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        Context-aware, explainable clinical NLP system for automated medical document understanding. Designed around real-world healthcare workflows with full explainability for regulatory alignment.
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">NLP</span>
+                        <span class="stack-pill">SHAP</span>
+                        <span class="stack-pill">Python</span>
+                        <span class="stack-pill">scikit-learn</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/clinical-doc-ai" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Water Classifier (publication linked) -->
+            <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="200">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">Quantum / ML</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum Water Pollutant Classifier</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        Hybrid Quantum-Classical Neural Network identifying contaminant ions in water using experimental photonic sensor data. Linked to published paper (Jun 2026).
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">Qiskit</span>
+                        <span class="stack-pill">PennyLane</span>
+                        <span class="stack-pill">PyTorch</span>
+                    </div>
+                    <p class="card-metric">96.67% accuracy on IBM quantum hardware</p>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/Classification-of-Ions-in-Water-using-Quantum-Machine-learning" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quantum-Classical LSTM -->
+            <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col reveal" data-delay="0">
+                <div class="p-6 flex-grow">
+                    <span class="text-sm text-accent font-medium">Quantum / Finance</span>
+                    <h3 class="mt-2 text-xl font-semibold text-gray-900">Quantum-Classical Stock Forecaster</h3>
+                    <p class="mt-3 text-base text-gray-600">
+                        Hybrid Quantum-Classical RNN (LSTM + VQC) for stock index closing price prediction, leveraging a variational quantum circuit for enhanced feature learning.
+                    </p>
+                    <div class="stack-pills">
+                        <span class="stack-pill">LSTM</span>
+                        <span class="stack-pill">VQC</span>
+                        <span class="stack-pill">PennyLane</span>
+                        <span class="stack-pill">PyTorch</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <a href="https://github.com/Rudra1x/Classical-Quantum-Neural-Network-for-Financial-Stock-Forecast" class="text-accent font-medium hover:text-blue-700 inline-flex items-center">
+                        View on GitHub
+                        <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.1 0-1.3-.5-2.4-1.3-3.2.1-.3.5-1.5-.1-3.2 0 0-1-.3-3.3 1.3a12 12 0 0 0-6 0c-2.3-1.6-3.3-1.3-3.3-1.3-.6 1.7-.2 2.9-.1 3.2-.8.8-1.3 1.9-1.3 3.2 0 4.7 2.7 5.8 5.5 6.1-.6.5-.9 1.4-.9 2.8v3.5"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Publications Section -->
+<section id="publications" class="bg-white py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <span class="section-overline">Research</span>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Publications</h2>
+            <span class="section-accent-bar"></span>
+            <p class="text-lg text-gray-600">7 publications across quantum optimization, hybrid quantum-classical systems, and quantum hardware experiments.</p>
+        </div>
+        <div class="flex flex-col gap-6">
+
+            <div class="pub-card reveal" data-delay="0">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="pub-badge pub-badge-article">Article</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent">Jul 2026</span>
+                            <span class="text-xs text-gray-500"></span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Quantum-Inspired Optimization for Robust Aircraft Cargo Loading Using a QUBO Formulation</h3>
+                        <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma, Ravi Katukam, Arjun Nagulapally</p>
+                        <p class="mt-2 text-sm text-gray-600">Reformulates aircraft cargo loading as a QUBO problem encoding payload maximization and structural safety. Classical heuristics produce fragile solutions near operational limits; the quantum-inspired approach yields robust placements under perturbation.</p>
+                    </div>
+                    <a href="https://www.researchgate.net/publication/410676182_Quantum-Inspired_Optimization_for_Robust_Aircraft_Cargo_Loading_Using_a_QUBO_Formulation" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
+                        Read Paper
+                        <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-card reveal" data-delay="100">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="pub-badge pub-badge-preprint">Preprint</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent">Jan 2026</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Bridging the Linear-Quadratic Gap: A Quantum-Classical Hybrid Approach to Robust Supply Chain Design</h3>
+                        <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma, Ravi Katukam, Arjun Nagulapally</p>
+                        <p class="mt-2 text-sm text-gray-600">Addresses the trade-off between demand coverage and facility overlap in urban logistics. Tested on a high-fidelity Delhi NCR dataset; hybrid quantum-classical solver outperforms classical optimization on the Pareto frontier of demand capture vs. overlap risk.</p>
+                    </div>
+                    <a href="https://www.researchgate.net/publication/399559986_Bridging_the_Linear-Quadratic_Gap_A_Quantum-Classical_Hybrid_Approach_to_Robust_Supply_Chain_Design" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
+                        Read Paper
+                        <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-card reveal" data-delay="200">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span class="pub-badge pub-badge-preprint">Preprint</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accent">Dec 2025</span>
+                            <span class="text-xs text-gray-500">arXiv:2512.23009</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Symmetry-Preserving Variational Quantum Simulation of the Heisenberg Spin Chain on Noisy Quantum Hardware</h3>
+                        <p class="mt-2 text-sm text-gray-600">Rudraksh Sharma</p>
+                        <p class="mt-2 text-sm text-gray-600">Investigates physics-informed ansatz design for VQE on NISQ devices. Symmetry-preserving circuits outperform hardware-efficient baselines on IQM Garnet hardware, validated against exact diagonalization.</p>
+                    </div>
+                    <a href="https://doi.org/10.48550/arXiv.2512.23009" target="_blank" rel="noopener" class="flex-shrink-0 inline-flex items-center text-accent text-sm font-medium hover:text-accent-light whitespace-nowrap">
+                        Read Paper
+                        <svg class="ml-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-10 text-center">
+            <a href="https://www.researchgate.net/profile/Rudraksh-Sharma-8" target="_blank" rel="noopener" class="inline-flex items-center text-accent font-medium hover:text-accent-light">
+                View all 7 publications on ResearchGate
+                <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 sm:py-32 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Get in Touch</h2>
+        <p class="mt-4 text-lg text-gray-300">Open to discussing new projects, research collaboration, or freelance opportunities.</p>
+        <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
+            <a href="mailto:Ranup55novo@gmail.com" class="flex flex-col items-center text-gray-100 hover:text-white">
+                <svg class="w-10 h-10 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span class="font-medium">Ranup55novo@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/rudraksh-sharma2023" class="flex flex-col items-center text-gray-100 hover:text-white">
+                <svg class="w-10 h-10 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <span class="font-medium">LinkedIn</span>
+            </a>
+            <span class="flex flex-col items-center text-gray-100">
+                <svg class="w-10 h-10 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span class="font-medium">+91 7618581993</span>
+            </span>
+        </div>
+        <div class="mt-16">
+            <a href="Rudraksh_Sharma_CV.pdf" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-100 shadow-md">
+                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <p class="text-center text-base text-gray-500">&copy; 2026 Rudraksh Sharma. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // --- Mobile Menu ---
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    menuButton.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('hidden', !isOpen);
+        menuIconClose.classList.toggle('hidden', isOpen);
+    });
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIconOpen.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
+        });
+    });
+
+    // --- Smooth Scrolling ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
                 }
+            }
+        });
+    });
 
-                class Particle {
-                    constructor() {
-                        this.x = Math.random() * canvas.width;
-                        this.y = Math.random() * canvas.height;
-                        this.radius = Math.random() * 1.5 + 1; // Small particles
-                        this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
-                        this.vy = (Math.random() - 0.5) * 0.5;
+    // --- Nav Active Section Highlighting ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header nav a.nav-link');
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-active');
+                    if (link.getAttribute('href') === '#' + entry.target.id) {
+                        link.classList.add('nav-active');
                     }
-
-                    draw() {
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                        ctx.fillStyle = particleColor;
-                        ctx.fill();
-                    }
-
-                    update() {
-                        this.x += this.vx;
-                        this.y += this.vy;
-
-                        // Bounce off edges
-                        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-                        this.draw();
-                    }
-                }
-
-                function initParticles() {
-                    particles = [];
-                    for (let i = 0; i < particleCount; i++) {
-                        particles.push(new Particle());
-                    }
-                }
-
-                function connectParticles() {
-                    for (let i = 0; i < particles.length; i++) {
-                        for (let j = i + 1; j < particles.length; j++) {
-                            const dx = particles[i].x - particles[j].x;
-                            const dy = particles[i].y - particles[j].y;
-                            const distance = Math.sqrt(dx * dx + dy * dy);
-
-                            if (distance < 120) { // Max distance for a line
-                                ctx.beginPath();
-                                ctx.moveTo(particles[i].x, particles[i].y);
-                                ctx.lineTo(particles[j].x, particles[j].y);
-                                // Fade line with distance
-                                ctx.strokeStyle = `hsla(230, 70%, 80%, ${Math.max(0, 0.3 - distance / 400)})`;
-                                ctx.lineWidth = 0.5;
-                                ctx.stroke();
-                            }
-                        }
-                    }
-                }
-
-                function animate() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    connectParticles();
-                    particles.forEach(p => p.update());
-                    requestAnimationFrame(animate);
-                }
-
-                // Initial setup
-                resizeCanvas();
-                initParticles();
-                animate();
-
-                // Re-setup on window resize
-                window.addEventListener('resize', () => {
-                    resizeCanvas();
-                    initParticles();
                 });
             }
         });
-    </script>
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // --- Scroll Reveal Animations ---
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay) || 0;
+                setTimeout(() => entry.target.classList.add('visible'), delay);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // --- Particle Canvas Animation ---
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 60;
+        const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--particle-color').trim() || 'hsla(230, 70%, 80%, 0.3)';
+
+        function resizeCanvas() {
+            const heroSection = document.getElementById('home');
+            canvas.width = heroSection.offsetWidth;
+            canvas.height = heroSection.offsetHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 1.5 + 1;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = particleColor;
+                ctx.fill();
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                this.draw();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+        }
+
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `hsla(230, 70%, 80%, ${Math.max(0, 0.3 - distance / 400)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            connectParticles();
+            particles.forEach(p => p.update());
+            requestAnimationFrame(animate);
+        }
+
+        resizeCanvas();
+        initParticles();
+        animate();
+        window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+    }
+});
+</script>
 
 </body>
 </html>
